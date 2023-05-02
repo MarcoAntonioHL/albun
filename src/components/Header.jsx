@@ -14,22 +14,21 @@ const darkTheme = createTheme({
 export const Header = () => {
     return (
         <>
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{ display: 'flex', paddingBottom: '30px' }}>
 
                 <ThemeProvider theme={darkTheme}>
                     <AppBar component="nav" position="static">
                         <Container maxWidth="lg">
                             <Toolbar>
                                 <IconButton
-                                    size="large"
                                     edge="start"
-                                    color="inherit"
+                                    color="#31504F"
                                     aria-label="open drawer"
                                     sx={{ mr: 2 }}
                                 >
-                                    <CakeIcon />
+                                    <CakeIcon fontSize='large'/>
                                 </IconButton>
-                                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                                <Typography color='#31504F' variant="h4" component="div" sx={{ flexGrow: 1 }}>
                                     Tortas
                                 </Typography>
                             </Toolbar>

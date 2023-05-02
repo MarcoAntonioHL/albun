@@ -4,13 +4,12 @@ import { itemData } from '../../data/cakes'
 import { CardCake } from '@/src/components/CardCake'
 
 export const Cakes = () => {
-  console.log(itemData)
   return (
     <>
       <Container maxWidth="lg">
         <Grid
           container
-          spacing={1}
+          spacing={3}
           direction="row"
           justifyContent="center"
           alignItems="center"
@@ -19,7 +18,7 @@ export const Cakes = () => {
         >
           {itemData &&
             itemData.map((cake, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}>
+              <Grid item xs={12} sm={6} lg={4} key={index}>
                 <CardCake cake={cake}/>
               </Grid>
             ))

@@ -14,8 +14,6 @@ export default function Home() {
       <div className={styles.main}>
         <Header/>
         <Cakes/>
-        <Muestras></Muestras>
-        
       </div>
     </>
   )
