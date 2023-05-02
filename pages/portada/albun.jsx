@@ -73,7 +73,7 @@ export default function Muestras(){
           filling:'manjar',
           add:'castaña',
           decorate:'chantilly',
-          itemDecorate:'frutillas'
+          itemDecorate:'frutillas',
 
         },
         {
