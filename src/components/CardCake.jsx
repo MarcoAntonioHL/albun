@@ -10,12 +10,13 @@ import { DescriptionCake } from './DescriptionCake';
 
 
 
-export const CardCake = (cake) => {
-  const{img,title,bill,flavor,filling}=cake
-  
+export const CardCake = ({cake}) => {
+  const { img, title, bill, flavor, filling } = cake
+  console.log(cake)
+
   return (
     <>
-        <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 345 }}>
         <CardMedia
           component="img"
           alt="green iguana"

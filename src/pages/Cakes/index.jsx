@@ -1,7 +1,10 @@
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
+import { itemData } from '../../data/cakes'
+import { CardCake } from '@/src/components/CardCake'
+
 export const Cakes = () => {
-  const lista = [1, 2, 3, 4, 5, 6]
+  console.log(itemData)
   return (
     <>
       <Container maxWidth="lg">
@@ -14,10 +17,10 @@ export const Cakes = () => {
           alignContent="center"
           wrap="wrap"
         >
-          {lista &&
-            lista.map(cake => (
-              <Grid item xs={12} md={6} lg={4} key={cake}>
-                {cake}
+          {itemData &&
+            itemData.map((cake, index) => (
+              <Grid item xs={12} md={6} lg={4} key={index}>
+                <CardCake cake={cake}/>
               </Grid>
             ))
           }
