@@ -7,11 +7,13 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { itemData } from '../data/cakes';
 import { DescriptionCake } from './DescriptionCake';
+import Grid from '@mui/material/Grid'
+import { ButtonBuy } from './ButtonBuy';
 
 
 
-export const CardCake = ({cake}) => {
-  const { img, title, bill, flavor, filling } = cake
+export const CardCake = ({ cake }) => {
+  const { img, title, bill } = cake
 
   return (
     <>
@@ -31,7 +33,22 @@ export const CardCake = ({cake}) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <DescriptionCake cake={cake}></DescriptionCake>
+          <Grid
+            container
+            spacing={1}
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            alignContent="center"
+            wrap="wrap"
+          >
+            <Grid item xs={6}>
+              <DescriptionCake cake={cake}></DescriptionCake>
+            </Grid>
+            <Grid item xs={6}>
+              <ButtonBuy cake={cake}/>
+            </Grid>
+          </Grid>
         </CardActions>
       </Card>
     </>
