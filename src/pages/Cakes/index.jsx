@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Home = () => {
+export const Cakes = () => {
   return (
     <>
-        
+        <h1>indexhomes</h1>
     </>
   )
 }
