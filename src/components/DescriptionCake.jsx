@@ -1,46 +1,50 @@
-import {React,useState} from 'react'
-import { Modal } from '@mui/material/Modal'
-import { Button } from '@mui/material/Button'
-import { Box } from '@mui/material/Box'
+import { Box, Button, Modal } from "@mui/material";
+import { React, useState } from "react";
+
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 500,
-  bgcolor: ' #48c9b0',
-  border: '2px solid #000',
+  bgcolor: " #48c9b0",
+  border: "2px solid #000",
   boxShadow: 24,
   pt: 2,
   px: 4,
   pb: 3,
 };
 
-export const DescriptionCake = () => {
-  const [open,setOpen]=useState()
-  const handleOpen=()=>{
+export const DescriptionCake = ({ cake }) => {
+  const [open, setOpen] = useState(false);
+  
+  const { title, bill, flavor, filling, add, decorate, itemDecorate } = cake
+
+  const handleOpen = () => {
     setOpen(true);
-  }
-  const handleClose=()=>{
+  };
+  const handleClose = () => {
     setOpen(false);
-  }
+  };
+
   return (
     <>
-      <Button size="small" onClick={()=>handleOpen()}>Descripcion</Button>
+      <Button size="small" onClick={() => handleOpen()}>
+        Descripcion
+      </Button>
       <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="parent-modal-title"
-          aria-describedby="parent-modal-description"
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="parent-modal-title"
+        aria-describedby="parent-modal-description"
       >
-          <Box sx={{ ...style, width: 400 }}>
-              <h2 id="parent-modal-title">{}</h2>
-              <p id="parent-modal-description">
-                  {}
-              </p>
-          </Box>
+        <Box sx={{ ...style, width: 400 }}>
+          <h2 id="parent-modal-title">{title}</h2>
+          <p id="parent-modal-description"></p>
+          {decorate}
+        </Box>
       </Modal>
     </>
-  )
-}
+  );
+};

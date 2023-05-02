@@ -32,7 +32,7 @@ export const CardCake = ({cake}) => {
           </Typography>
         </CardContent>
         <CardActions>
-          {/*<DescriptionCake></DescriptionCake>*/}
+          <DescriptionCake cake={cake}></DescriptionCake>
         </CardActions>
       </Card>
     </>
