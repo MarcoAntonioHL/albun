@@ -1,0 +1,27 @@
+.caja{
+    width:70%;
+    background-color: rgb(28, 67, 67);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.titulo{
+    width: 50%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    
+}
+.boton{
+    width: 50%;
+    height: 50px;
+    background-color: brown;
+}
+.imagelist{
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
