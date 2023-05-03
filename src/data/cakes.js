@@ -1,14 +1,17 @@
 export const itemData = [
     {
       img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-      title: 'Breakfast',
+      title: 'Selva Negra',
       bill: '25 s/',
       flavor:'chocolate',
       filling:'manjar',
-      add:'castaña',
+      add:'dulces',
       decorate:'chantilly',
       itemDecorate:'frutillas',
-
+      porcion:'15',
+      forma:'corazon',
+      dimenciones:'15x16',
+      
     },
     {
       img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
