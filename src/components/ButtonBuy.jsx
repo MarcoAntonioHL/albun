@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '@mui/material/Button'
+import CallIcon from '@mui/icons-material/Call'
 
 export const ButtonBuy = ({ cake }) => {
     const { title, bill } = cake
@@ -9,6 +10,7 @@ export const ButtonBuy = ({ cake }) => {
         <>
             <a href={link} target="_blank">
                 <Button
+                    startIcon={<CallIcon />}
                     sx={{
                         backgroundColor: '#92dad9',
                         color:'#31504F',
