@@ -1,66 +1,61 @@
-import { Box, Button, Modal } from "@mui/material"
-import { React, useState } from "react"
-import CakeIcon from '@mui/icons-material/Cake'
+import { useState } from "react"
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
+import styles from './DescriptionCake.module.css';
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 500,
-  bgcolor: " #48c9b0",
-  border: "2px solid #000",
-  boxShadow: 24,
-  pt: 2,
-  px: 4,
-  pb: 3,
-};
+const Transition =React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
-export const DescriptionCake = ({ cake }) => {
+
+export function DescriptionCake({cake}) {
   const [open, setOpen] = useState(false);
-
-  const { title, bill, flavor, filling, add, decorate, itemDecorate } = cake
-
-  const handleOpen = () => {
+  const { title, bill, Description, porciones,forma,dimenciones } = cake
+  const handleClickOpen = () => {
     setOpen(true);
   };
+
   const handleClose = () => {
     setOpen(false);
   };
 
   return (
-    <>
-      <Button
-        onClick={() => handleOpen()}
-        variant="contained"
-        fullWidth
-        startIcon={<CakeIcon />}
-        sx={{
-          color: '#31504F',
-          marginY: 2
-        }}
-      >
-        Detalles
+    <div>
+      <Button variant="secondary" onClick={()=>handleClickOpen()}>
+        Descripcion
       </Button>
-      <Modal
+      <Dialog
         open={open}
+        TransitionComponent={Transition}
+        keepMounted
         onClose={handleClose}
-        aria-labelledby="parent-modal-title"
-        aria-describedby="parent-modal-description"
+        aria-describedby="alert-dialog-slide-description"
       >
-        <Box sx={{ ...style, width: 400 }}>
-          <h1>{bill}</h1>
-          <h2 id="parent-modal-title">{title}</h2>
-          <p id="parent-modal-description">
-            Torta de {flavor} con relleno de {filling},
-            frutos secos.
-          </p>
-          <p>Decorado en {decorate}
-          con {add} con detalles {itemDecorate}
-          </p>
-          
-        </Box>
-      </Modal>
-    </>
+        <div className={styles.bill}><p>{bill}</p><div className={styles.sl}>s/.</div></div>
+        <DialogTitle>{title}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+            {Description}
+          </DialogContentText>
+          <DialogContentText >
+            <FavoriteBorderIcon fontSize="small"/> modelo: {forma}<br/>
+            <FavoriteBorderIcon fontSize="small" />{porciones}porciones<br/>
+            <FavoriteBorderIcon fontSize="small"/>tamaño:{dimenciones}<br/>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Agree</Button>
+        </DialogActions>
+      </Dialog>
+    </div>
   );
-};
+}
+
+
