@@ -12,7 +12,6 @@ export const ButtonBuy = ({ cake }) => {
                 <Button
                     startIcon={<CallIcon />}
                     sx={{
-                        backgroundColor: '#92dad9',
                         color:'#31504F',
                         marginY: 2
                     }}

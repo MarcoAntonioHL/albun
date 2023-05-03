@@ -1,6 +1,6 @@
-import { Box, Button, Modal } from "@mui/material";
-import { React, useState } from "react";
-
+import { Box, Button, Modal } from "@mui/material"
+import { React, useState } from "react"
+import CakeIcon from '@mui/icons-material/Cake'
 
 const style = {
   position: "absolute",
@@ -18,7 +18,7 @@ const style = {
 
 export const DescriptionCake = ({ cake }) => {
   const [open, setOpen] = useState(false);
-  
+
   const { title, bill, flavor, filling, add, decorate, itemDecorate } = cake
 
   const handleOpen = () => {
@@ -30,8 +30,17 @@ export const DescriptionCake = ({ cake }) => {
 
   return (
     <>
-      <Button size="small" onClick={() => handleOpen()}>
-        Descripcion
+      <Button
+        onClick={() => handleOpen()}
+        variant="contained"
+        fullWidth
+        startIcon={<CakeIcon />}
+        sx={{
+          color: '#31504F',
+          marginY: 2
+        }}
+      >
+        Detalles
       </Button>
       <Modal
         open={open}
