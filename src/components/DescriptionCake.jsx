@@ -40,9 +40,16 @@ export const DescriptionCake = ({ cake }) => {
         aria-describedby="parent-modal-description"
       >
         <Box sx={{ ...style, width: 400 }}>
+          <h1>{bill}</h1>
           <h2 id="parent-modal-title">{title}</h2>
-          <p id="parent-modal-description"></p>
-          {decorate}
+          <p id="parent-modal-description">
+            Torta de {flavor} con relleno de {filling},
+            frutos secos.
+          </p>
+          <p>Decorado en {decorate}
+          con {add} con detalles {itemDecorate}
+          </p>
+          
         </Box>
       </Modal>
     </>
