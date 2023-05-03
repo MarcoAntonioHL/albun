@@ -24,7 +24,10 @@ export const CardCake = ({ cake }) => {
           height="240"
           image={img}
         />
-        <CardContent>
+        <CardContent 
+          sx={{
+            backgroundColor: '#f7e2e1'
+          }}>
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
@@ -32,7 +35,10 @@ export const CardCake = ({ cake }) => {
             {bill}
           </Typography>
         </CardContent>
-        <CardActions>
+        <CardActions
+          sx={{
+            backgroundColor: '#f7e2e1'
+          }}>
           <Grid
             container
             spacing={1}

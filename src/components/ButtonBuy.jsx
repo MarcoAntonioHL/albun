@@ -16,6 +16,7 @@ export const ButtonBuy = ({ cake }) => {
                         marginY: 2
                     }}
                     variant="contained"
+                    color='secondary'
                     fullWidth
                 >
                     Comprar
