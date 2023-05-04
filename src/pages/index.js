@@ -16,6 +16,7 @@ export default function Home() {
         <div className={styles.main}>
           <Header />
           <Cakes />
+          .
         </div>
       </ThemeContext>
     </>
