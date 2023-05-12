@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
 import styles from '@/src/styles/Home.module.css'
-import Muestras from './portada/albun'
-import { Cakes } from './Cakes'
+//import Muestras from './portada/albun'
+import Cakes from './Cakes/Cakess'
 import { Header } from '../components/Header'
 import ThemeContext from '../context/theme'
 
@@ -16,7 +16,6 @@ export default function Home() {
         <div className={styles.main}>
           <Header />
           <Cakes />
-          .
         </div>
       </ThemeContext>
     </>
