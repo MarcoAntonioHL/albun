@@ -15,10 +15,8 @@ export default function Home() {
     <>
       <ThemeContext>
         <div className={styles.main}>
-          <Login>
             <Header />
             <Cakes />
-          </Login>
         </div>
       </ThemeContext>
     </>
