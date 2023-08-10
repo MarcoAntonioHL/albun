@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { styled } from '@mui/material/styles';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -6,8 +6,9 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import styles from '@/src/styles/Home.module.css'
-import { Box, Button, Grid } from '@mui/material';
-
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, Slide } from '@mui/material';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import Link from 'next/link';
 
 const BpIcon = styled('span')(({ theme }) => ({
     borderRadius: '50%',
@@ -50,6 +51,10 @@ const BpIcon = styled('span')(({ theme }) => ({
       backgroundColor: '#106ba3',
     },
   });
+
+  const Transition =React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+  });
   
   // Inspired by blueprintjs
   function BpRadio(props) {
@@ -64,7 +69,34 @@ const BpIcon = styled('span')(({ theme }) => ({
     );
   }
 export default function PersonalizarProducto() {
-    
+    const [open,setOpen]=useState(false)
+    const [sabor,setSabor]=useState('')
+    const [agregado,setAgregado]=useState('')
+    const [relleno,setRelleno]=useState('')
+    const [decorado,setDecorado]=useState('')
+    const handleChangeSabor=(event)=>{
+        console.log(event.target.value)
+        setSabor(event.target.value)
+    }
+    const handleChangeAgregado=(event)=>{
+        console.log(event.target.value)
+        setAgregado(event.target.value)
+    }
+    const handleChangeRelleno=(event)=>{
+        console.log(event.target.value)
+        setRelleno(event.target.value)
+    }
+    const handleChangeDecorado=(event)=>{
+        console.log(event.target.value)
+        setDecorado(event.target.value)
+    }
+    const handleSend=()=>{
+        console.log(sabor,agregado,relleno,decorado)
+        setOpen(true)
+    }
+    const handleClose=()=>{
+        setOpen(false)
+    }
   return (
     < >
         <FormControl sx={{left:'25%'}}>
@@ -76,10 +108,11 @@ export default function PersonalizarProducto() {
                     defaultValue="Naranja"
                     aria-labelledby="demo-customized-radios"
                     name="customized-radios"
+                    onChange={handleChangeSabor}
                 >
                     
-                    <FormControlLabel value="female" control={<BpRadio />} label="Vainilla" />
-                    <FormControlLabel value="male" control={<BpRadio />} label="Chocolate" />
+                    <FormControlLabel value="Vainilla" control={<BpRadio />} label="Vainilla" />
+                    <FormControlLabel value="Chocolate" control={<BpRadio />} label="Chocolate" />
                     <FormControlLabel value="naranja" control={<BpRadio />} label="Naranja" />
                     <FormControlLabel value="yogurt" control={<BpRadio />} label="Yogurt" />
                     <FormControlLabel
@@ -99,6 +132,7 @@ export default function PersonalizarProducto() {
             defaultValue="Naranja"
             aria-labelledby="demo-customized-radios"
             name="customized-radios"
+            onChange={handleChangeAgregado}
         >
             
             <FormControlLabel value="Confitado" control={<BpRadio />} label="Confitado" />
@@ -124,6 +158,7 @@ export default function PersonalizarProducto() {
             defaultValue="Naranja"
             aria-labelledby="demo-customized-radios"
             name="customized-radios"
+            onChange={handleChangeRelleno}
         >
             
             <FormControlLabel value="Mermelada" control={<BpRadio />} label="Mermelada" />
@@ -146,6 +181,7 @@ export default function PersonalizarProducto() {
             defaultValue="Naranja"
             aria-labelledby="demo-customized-radios"
             name="customized-radios"
+            onChange={handleChangeDecorado}
         >
             
             <FormControlLabel value="Chantilly" control={<BpRadio />} label="Chantilly" />
@@ -166,11 +202,39 @@ export default function PersonalizarProducto() {
                 <Button variant='contained' color='secondary'>Salir</Button>
             </Grid>
             <Grid item xs={3}>
-                <Button variant='contained' color='Primary'>Siguiente</Button>
+                <Button variant='contained' onClick={handleSend}>Siguiente</Button>
             </Grid>
         </Grid>
         </FormControl>
         
+        <Dialog
+            open={open}
+            TransitionComponent={Transition}
+            keepMounted
+            onClose={handleClose}
+            aria-describedby="alert-dialog-slide-description"
+        >
+            
+            <DialogTitle>Descripcion del producto</DialogTitle>
+            <DialogContent>
+            <DialogContentText id="alert-dialog-slide-description">
+                Descripcion
+            </DialogContentText>
+            <DialogContentText >
+                <FavoriteBorderIcon fontSize="small"/> {sabor}<br/>
+                <FavoriteBorderIcon fontSize="small" />{agregado}<br/>
+                <FavoriteBorderIcon fontSize="small"/>{relleno}<br/>
+                <FavoriteBorderIcon fontSize="small"/>{decorado}<br/>
+            </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+            <Link href={'/Cakes/Cakess'}>
+                <Button variant='contained'>Correcto</Button>
+            </Link>
+            </DialogActions>
+        </Dialog>    
+        
+
     </>
     
 
