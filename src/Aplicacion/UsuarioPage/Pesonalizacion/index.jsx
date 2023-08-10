@@ -1,0 +1,179 @@
+import React from 'react'
+import { styled } from '@mui/material/styles';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import styles from '@/src/styles/Home.module.css'
+import { Box, Button, Grid } from '@mui/material';
+
+
+const BpIcon = styled('span')(({ theme }) => ({
+    borderRadius: '50%',
+    width: 16,
+    height: 16,
+    boxShadow:
+      theme.palette.mode === 'dark'
+        ? '0 0 0 1px rgb(16 22 26 / 40%)'
+        : 'inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)',
+    backgroundColor: theme.palette.mode === 'dark' ? '#394b59' : '#f5f8fa',
+    backgroundImage:
+      theme.palette.mode === 'dark'
+        ? 'linear-gradient(180deg,hsla(0,0%,100%,.05),hsla(0,0%,100%,0))'
+        : 'linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))',
+    '.Mui-focusVisible &': {
+      outline: '2px auto rgba(19,124,189,.6)',
+      outlineOffset: 2,
+    },
+    'input:hover ~ &': {
+      backgroundColor: theme.palette.mode === 'dark' ? '#30404d' : '#ebf1f5',
+    },
+    'input:disabled ~ &': {
+      boxShadow: 'none',
+      background:
+        theme.palette.mode === 'dark' ? 'rgba(57,75,89,.5)' : 'rgba(206,217,224,.5)',
+    },
+  }));
+  
+  const BpCheckedIcon = styled(BpIcon)({
+    backgroundColor: '#137cbd',
+    backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',
+    '&:before': {
+      display: 'block',
+      width: 16,
+      height: 16,
+      backgroundImage: 'radial-gradient(#fff,#fff 28%,transparent 32%)',
+      content: '""',
+    },
+    'input:hover ~ &': {
+      backgroundColor: '#106ba3',
+    },
+  });
+  
+  // Inspired by blueprintjs
+  function BpRadio(props) {
+    return (
+      <Radio
+        disableRipple
+        color="default"
+        checkedIcon={<BpCheckedIcon />}
+        icon={<BpIcon />}
+        {...props}
+      />
+    );
+  }
+export default function PersonalizarProducto() {
+    
+  return (
+    < >
+        <FormControl sx={{left:'25%'}}>
+        <Grid container spacing={5}>
+            <Grid item xs={6}>
+                <FormLabel id="sabor">Sabor</FormLabel>
+            <Box >
+                <RadioGroup
+                    defaultValue="Naranja"
+                    aria-labelledby="demo-customized-radios"
+                    name="customized-radios"
+                >
+                    
+                    <FormControlLabel value="female" control={<BpRadio />} label="Vainilla" />
+                    <FormControlLabel value="male" control={<BpRadio />} label="Chocolate" />
+                    <FormControlLabel value="naranja" control={<BpRadio />} label="Naranja" />
+                    <FormControlLabel value="yogurt" control={<BpRadio />} label="Yogurt" />
+                    <FormControlLabel
+                    value="disabled"
+                    disabled
+                    control={<BpRadio />}
+                    label="otros"
+                    />
+                </RadioGroup>   
+            </Box>
+            </Grid>
+
+        <Grid item xs={6} >
+        <FormLabel id="Agregado">+Agregado</FormLabel>
+        <Box >
+        <RadioGroup
+            defaultValue="Naranja"
+            aria-labelledby="demo-customized-radios"
+            name="customized-radios"
+        >
+            
+            <FormControlLabel value="Confitado" control={<BpRadio />} label="Confitado" />
+            <FormControlLabel value="Pasas" control={<BpRadio />} label="Pasas" />
+            <FormControlLabel value="Fruta" control={<BpRadio />} label="Fruta" />
+            <FormControlLabel value="Castaña" control={<BpRadio />} label="Castaña" />
+            <FormControlLabel value="Pecanas" control={<BpRadio />} label="Pecanas" />
+            <FormControlLabel value="Chocolate" control={<BpRadio />} label="Chocolate" />
+            <FormControlLabel
+            value="disabled"
+            disabled
+            control={<BpRadio />}
+            label="otros"
+            />
+        </RadioGroup> 
+        </Box>
+        </Grid>
+
+        <Grid item xs={6}>
+        <FormLabel id="Relleno">Relleno</FormLabel>
+        <Box >
+        <RadioGroup
+            defaultValue="Naranja"
+            aria-labelledby="demo-customized-radios"
+            name="customized-radios"
+        >
+            
+            <FormControlLabel value="Mermelada" control={<BpRadio />} label="Mermelada" />
+            <FormControlLabel value="Manjar" control={<BpRadio />} label="Manjar" />
+            <FormControlLabel value="chantilly" control={<BpRadio />} label="chantully" />
+            <FormControlLabel
+            value="disabled"
+            disabled
+            control={<BpRadio />}
+            label="otros"
+            />
+        </RadioGroup>
+        </Box>
+        </Grid>
+
+        <Grid item xs={6}>
+        <FormLabel id="Decorado">Decorado</FormLabel>
+        <Box>
+        <RadioGroup
+            defaultValue="Naranja"
+            aria-labelledby="demo-customized-radios"
+            name="customized-radios"
+        >
+            
+            <FormControlLabel value="Chantilly" control={<BpRadio />} label="Chantilly" />
+            <FormControlLabel value="Fondant" control={<BpRadio />} label="Fondant" />
+            
+            <FormControlLabel
+            value="disabled"
+            disabled
+            control={<BpRadio />}
+            label="otros"
+            />
+        </RadioGroup>
+        </Box>
+        </Grid>
+        </Grid>
+        <Grid container spacing={5}>
+            <Grid item xs={8}>
+                <Button variant='contained' color='secondary'>Salir</Button>
+            </Grid>
+            <Grid item xs={3}>
+                <Button variant='contained'>Siguiente</Button>
+            </Grid>
+        </Grid>
+        </FormControl>
+        
+    </>
+    
+
+
+  )
+}

@@ -2,10 +2,15 @@ import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import { itemData } from '../../data/cakes'
 import { CardCake } from '@/src/components/CardCake'
+import MenuLayout from '@/src/components/layout/menu'
+import ThemeContext from '@/src/context/theme'
+import styles from '@/src/styles/Home.module.css'
 
 const Cakes = () => {
   return (
-    <>
+    <div className={styles.main}>
+    <ThemeContext>
+    <MenuLayout titulo='Tortas'>
       <Container maxWidth="lg">
         <Grid
           container
@@ -24,7 +29,9 @@ const Cakes = () => {
           }
         </Grid>
       </Container>
-    </>
+    </MenuLayout>
+    </ThemeContext>
+    </div>
   )
 }
 export default Cakes;

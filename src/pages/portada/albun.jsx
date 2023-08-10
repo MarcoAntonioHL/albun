@@ -137,8 +137,6 @@ export default function Muestras(){
                                 {info.flavor}
                             </p>
                         
-                        
-                        
                         </Box>
                     </Modal>
                     </ImageListItem>

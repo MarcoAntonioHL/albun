@@ -9,6 +9,7 @@ import { itemData } from '../data/cakes';
 import { DescriptionCake } from './DescriptionCake';
 import Grid from '@mui/material/Grid'
 import { ButtonBuy } from './ButtonBuy';
+import CustomButton from './CustomButton';
 
 
 
@@ -51,6 +52,9 @@ export const CardCake = ({ cake }) => {
           >
             <Grid item xs={6}>
               <DescriptionCake cake={cake}></DescriptionCake>
+            </Grid>
+            <Grid item xs={6}>
+              <CustomButton/>
             </Grid>
             <Grid item xs={6}>
               <ButtonBuy cake={cake}/>

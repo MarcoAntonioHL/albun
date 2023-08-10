@@ -1,6 +1,7 @@
+
 export const itemData = [
     {
-      img: './Images/torta1.jpg',
+      img: '/Images/cupcakes.jpg',
       title: 'Selva Negra',
       bill: '25',
       Description:'torta de chocolate relleno de manjar blanco y decorado con crema chantilly,fudge y fresas.',
@@ -10,7 +11,7 @@ export const itemData = [
       
     },
     {
-      img: '',
+      img: '/Images/postre4.jpg',
       title: 'Breakfast',
       bill: '25 s/',
       flavor:'chocolate',
@@ -20,7 +21,7 @@ export const itemData = [
       itemDecorate:'frutillas',
     },
     {
-      img: '',
+      img: '/Images/postre1.jpg',
       title: 'Breakfast',
       bill: '25 s/',
       flavor:'chocolate',
@@ -30,7 +31,7 @@ export const itemData = [
       itemDecorate:'frutillas',
     },
     {
-      img: '',
+      img: '/Images/postre2.jpg',
       title: 'Breakfast',
       bill: '25 s/',
       flavor:'chocolate',
@@ -40,7 +41,7 @@ export const itemData = [
       itemDecorate:'frutillas',
     },
     {
-        img: '',
+        img: '/Images/postre3.jpg',
         title: 'Breakfast',
         bill: '25 s/',
         flavor:'chocolate',

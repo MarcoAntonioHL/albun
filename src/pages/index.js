@@ -4,7 +4,7 @@ import styles from '@/src/styles/Home.module.css'
 import Cakes from './Cakes/Cakess'
 import { Header } from '../components/Header'
 import ThemeContext from '../context/theme'
-import Login from './Login/main'
+import Login from './Login'
 
 
 
@@ -15,8 +15,8 @@ export default function Home() {
     <>
       <ThemeContext>
         <div className={styles.main}>
-            <Header />
-            <Cakes />
+          <Login>        
+          </Login>
         </div>
       </ThemeContext>
     </>
