@@ -166,7 +166,7 @@ export default function PersonalizarProducto() {
                 <Button variant='contained' color='secondary'>Salir</Button>
             </Grid>
             <Grid item xs={3}>
-                <Button variant='contained'>Siguiente</Button>
+                <Button variant='contained' color='Primary'>Siguiente</Button>
             </Grid>
         </Grid>
         </FormControl>
