@@ -35,7 +35,7 @@ function FormularioLogin() {
 
     return (
         <Box sx={{width:300,height:300,backgroundColor:'primary.dark'}}>
-                <h1 className={styles.titulologin}>Login</h1>   
+                <h1 className={styles.titulologin}>Login</h1>z   
                 <form onSubmit={handleSubmit(onSubmit)}>
                               
                     <Controller
