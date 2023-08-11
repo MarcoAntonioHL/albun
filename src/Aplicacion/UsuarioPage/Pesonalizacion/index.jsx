@@ -9,6 +9,7 @@ import styles from '@/src/styles/Home.module.css'
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, Slide } from '@mui/material';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Link from 'next/link';
+import { ButtonBuy } from '@/src/components/ButtonBuy';
 
 const BpIcon = styled('span')(({ theme }) => ({
     borderRadius: '50%',
@@ -228,9 +229,9 @@ export default function PersonalizarProducto() {
             </DialogContentText>
             </DialogContent>
             <DialogActions>
-            <Link href={'/Cakes/Cakess'}>
-                <Button variant='contained'>Correcto</Button>
-            </Link>
+            
+            <ButtonBuy cake={sabor}>Correcto</ButtonBuy>
+            
             </DialogActions>
         </Dialog>    
         
