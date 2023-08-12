@@ -1,7 +1,7 @@
 
 export const itemData = [
     {
-      img: '/Images/cupcakes.jpg',
+      img: './Images/cupcakes.jpg',
       title: 'Selva Negra',
       bill: '25',
       Description:'torta de chocolate relleno de manjar blanco y decorado con crema chantilly,fudge y fresas.',
